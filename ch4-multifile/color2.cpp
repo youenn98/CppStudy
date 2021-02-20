@@ -7,11 +7,12 @@ enum Color{
     #define DEFINE_OPP(color,opp) color,
     #include "colorinfo.h"
     #undef DEFINE_OPP
+    NOT_A_COLOR
 };
 
 string ColorToString(Color c){
     switch (c){
-    #define DEFINE_OPP(color,opp) case color : return #color;
+    #define DEFINE_OPP(color,opp) case color : return string(#color);
     #include "colorinfo.h"
     #undef DEFINE_OPP
     default:
@@ -33,6 +34,5 @@ Color OppsiteColor(Color c){
 int main(){
     cout << ColorToString(Red) << endl;
     cout << ColorToString(OppsiteColor(Red)) << endl;
-
-
+    cout << NOT_A_COLOR << endl;
 }
