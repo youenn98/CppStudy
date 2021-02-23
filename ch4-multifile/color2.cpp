@@ -52,7 +52,6 @@ Color StringToColor(string c){
 }
 
 int main(){
-    #include "colorinfo.h"
     cout << ColorToString(eColor_Red) << endl;
     cout << ColorToString(OppsiteColor(eColor_Red)) << endl;
     cout << StringToColor("Red") << endl;
